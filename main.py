@@ -10,6 +10,11 @@ import cv2
 
 app = FastAPI()
 
+model_url = 'best.pt'
+model = YOLO(model_url)
+
+output_folder = "test_folder"
+
 @app.get("/")
 async def root():
     return {"greeting": "Hello, World!", "message": "Welcome to FastAPI!"}
