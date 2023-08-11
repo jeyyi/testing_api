@@ -6,6 +6,7 @@ from io import BytesIO
 from ultralytics import YOLO
 import os
 import base64
+import cv2
 
 app = FastAPI()
 
