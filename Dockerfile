@@ -1,5 +1,5 @@
 # Use the official Python image as the base image
-FROM python:3.8-slim
+FROM python:3.10
 
 # Set the working directory in the container
 WORKDIR /app
@@ -17,7 +17,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose the port that your FastAPI app will run on
-EXPOSE 8000
+# EXPOSE 8000
 
 # Set the entrypoint command to run Hypercorn
-CMD ["hypercorn", "main:app", "--bind", "0.0.0.0:8000"]
+# CMD ["hypercorn", "main:app", "--bind", "0.0.0.0:8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"] 
