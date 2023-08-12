@@ -17,7 +17,7 @@ output_folder = "test_folder"
 
 @app.get("/")
 async def root():
-    return {"greeting": "Hello, World!", "message": "Welcome to FastAPI!"}
+    return {"greeting": "Hello, World!", "message": f"Welcome to FastAPI! {model}"}
 
 @app.get("/detect_objects/")
 async def detect_objects():
