@@ -3,18 +3,17 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 # from PIL import Image, ImageDraw
 # from io import BytesIO
-# from ultralytics import YOLO
+from ultralytics import YOLO
 # import os
 # import base64
 # import cv2
 
 app = FastAPI()
 
-# model_url = 'best.pt'
-# model = YOLO(model_url)
+model_url = 'best.pt'
+model = YOLO(model_url)
 
-# output_folder = "test_folder"
-model = 'asdf'
+output_folder = "test_folder"
 @app.get("/")
 async def root():
     return {"greeting": "Hello, World!", "message": f"Welcome to FastAPI! {model}"}
