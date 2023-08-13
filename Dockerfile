@@ -5,7 +5,7 @@ FROM python:3.10
 WORKDIR /app
 
 # Install system-level dependencies
-RUN apt-get update && apt-get install -y libgl1
+# RUN apt-get update && apt-get install -y libgl1
 
 # Copy the requirements.txt file into the container
 COPY requirements.txt .
@@ -17,8 +17,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose the port that your FastAPI app will run on
-# EXPOSE 8000
+EXPOSE 8000
 
 # Set the entrypoint command to run Hypercorn
-# CMD ["hypercorn", "main:app", "--bind", "0.0.0.0:8000"]
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"] 
+CMD ["hypercorn", "main:app", "--bind", "0.0.0.0:8000"]
+# CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
