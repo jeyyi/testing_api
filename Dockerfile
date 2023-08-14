@@ -21,5 +21,5 @@ COPY . .
 EXPOSE 8000
 
 # Set the entrypoint command to run Hypercorn
-CMD ["hypercorn", "main:app", "--bind", "0.0.0.0:8000"]
-# CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+# CMD ["hypercorn", "main:app", "--bind", "0.0.0.0:8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
